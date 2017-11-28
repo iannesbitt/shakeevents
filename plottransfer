@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PORT='22' # the ssh port
+USER='user' # the ssh login username
+SRVR='my.webserver.here' # the desired server to transfer to
+LDIR='/opt/data/obs/' # the local directory to transfer from
+RDIR='/var/www/site/' # the remote directory to transfer to
+CPSH='/home/'$USER'/bin/mvplots' # the remote location of the mvplots script
+
+scp -P 223 $LDIR\$(date -u +\%Y).$(date -u +\%j).png $USER\@$SRVR:$RDIR/heli1.png
+scp -P 223 $LDIR\$(date -u +\%Y).$(date -u +\%j)-lowband.png $USER\@$SRVR:$RDIR/heli-band1.png
+scp -P 223 $LDIR\spec.png $USER\@$SRVR:$RDIR/spec1.png
+scp -P 223 $LDIR\spec-band.png $USER\@$SRVR:$RDIR/spec-band1.png
+ssh -p 223 $USER\@$SRVR $CPSH

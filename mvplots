@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR='/var/www/site'
+
+mv $DIR/heli1.png $DIR/heli.png
+mv $DIR/heli-band1.png $DIR/heli-band.png
+mv $DIR/spec1.png $DIR/spec.png
+mv $DIR/spec-band1.png $DIR/spec-band.png
