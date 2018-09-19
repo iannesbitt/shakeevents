@@ -1,4 +1,4 @@
-# shaketools
+# shakeevents
 _python tools to plot local and global earthquake events, gathered from the IRIS earthquake repository_
 
 # mapping (eventmaps.py)
@@ -53,7 +53,7 @@ You don't need to be exact. Just one decimal place ususally is enough to center 
 ### usage
 #### _command line_
 ```
-cd shaketools/
+cd shakeevents/
 source activate obspy
 python eventmaps.py
 ```
@@ -62,10 +62,10 @@ Cron is how I keep my website's images up-to-date. Here's a sample cron entry.
 ```
 SHELL=/bin/bash
 OBSPYTHON=/home/user/anaconda2/envs/obspy/bin
-PRDIR=/home/user/bin/shaketools    ## or wherever your shaketools installation happens to be
+PRDIR=/home/user/bin/shakeevents    ## or wherever your shakeevents installation happens to be
 */10 * * * * cd $PRDIR; source activate obspy; $OBSPYTHON/python eventmaps.py
 ```
-Since shaketools will create plots in the same directory as the source files, you may want to include a script that moves them to whatever directory you'd like your website's media files to reside in, in which case the last line of your cron entry would look like this
+Since shakeevents will create plots in the same directory as the source files, you may want to include a script that moves them to whatever directory you'd like your website's media files to reside in, in which case the last line of your cron entry would look like this
 ```
 */10 * * * * cd $PRDIR; source activate obspy; $OBSPYTHON/python eventmaps.py; mv *.png /var/www/website/media/plots
 ```
